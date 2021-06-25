@@ -2,26 +2,20 @@ import java.util.Scanner;
 
 public class Main{
     public static void main(String[] args){
-        Scanner sca = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
+        int A = sc.nextInt();
+        int B = sc.nextInt();
+        int C = sc.nextInt();
+        int num = A*B*C;
+        int re = (int)(Math.log10(num)+1);
+        int[] D = new int[10];
         
-        int H = sca.nextInt();
-        int M = sca.nextInt();
-
-        final int B = 60;
-        
-        
-        if(M-45 < 0) {
-        	H -= 1;
-        	M = B-45+M;
-        }else {
-        	M-=45;
+        for(int i = 0; i < re; i++){
+            D[num%10]++;
+            num = num/10;
+            }
+        for(int i = 0; i < 10; i++){
+            System.out.println(D[i]);
         }
-        
-    	if(H<0) {
-    		H = 23;
-    	}
-    	
-    	System.out.println(H);
-    	System.out.println(M);
     }
 }
