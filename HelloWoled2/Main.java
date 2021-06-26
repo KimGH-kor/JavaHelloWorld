@@ -1,28 +1,28 @@
 package HelloWoled2;
-
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.io.IOException;
-
-public class Main {
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        int T = Integer.parseInt(br.readLine().trim()); 
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int A = sc.nextInt();//°ú¸ñ ¼ö
+        String C[] = new String[A]; 
         
-        for (int i = 0; i < T; i++) {
-            String text = br.readLine();
-            String[] W = text.split(" ");
-            int A = Integer.parseInt(W[0]);
-            int B = Integer.parseInt(W[1]);
-            bw.write(A+B+"\n");
-            bw.flush();
+        
+        for(int i = 0; i < A; i++){
+        	String B = sc.next();
+            C[i] = B;
+            int result = 0;
+            int count = 0;
+            for(int k = 0; k < C[i].length(); k++){
+            if(C[i].charAt(k) == 'O'){
+                count++;
+                result += count;
+            }else{
+                count = 0;
             }
-
-        bw.close();
-        br.close();
- 
-    }
+            }
+            System.out.println(result);   
+        }
+        
+        
+        }
 }
