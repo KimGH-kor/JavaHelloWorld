@@ -1,21 +1,18 @@
 package HelloWoled2;
-import java.util.*;
+import java.util.Scanner;
 
 public class Main{
-		public static void main(String[] args){
-		    Scanner a = new Scanner(System.in);
-		    String sc = a.nextLine().trim();
-		    int answer = 0;
-		    
-            if(sc.length() != 0){
-		    for(int i = 0; i < sc.length(); i++){
-		        if(sc.charAt(i)==' '){
-		            answer += 1;
-		        }
-		    }
-            answer++;
-		    
-		}
-            System.out.println(answer);
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        
+        long A = sc.nextInt();
+        long B = sc.nextInt();
+        long C = sc.nextInt();
+        
+        if(B>=C){
+            System.out.println("-1");
+        }else{
+            System.out.println((A/(C-B))+1);
         }
-	}
+    }
+}
